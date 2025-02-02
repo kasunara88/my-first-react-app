@@ -1,6 +1,7 @@
 'use client';
 // Cliend side component for the login form
 import React, { useState } from 'react';
+import { loginUser } from '../libs/apis/server';
 
 export default function LoginForm() {
   const [email, setemail] = useState('');
@@ -9,29 +10,30 @@ export default function LoginForm() {
   const [passwordError, setpasswordError] = useState('');
 
   const validateForm = () => {
-    if (!email){
+    if (!email) {
       setemailError('Email is required');
       return false;
-    }else{
+    } else {
       setemailError('');
     }
-    if (!password){
+    if (!password) {
       setpasswordError('Password is required');
       return false;
-    }else{
+    } else {
       setpasswordError('');
     }
     return true;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const isValid = validateForm();
-    if(isValid){
-      console.log("Form Data;", {email: email, password: password});};
+    if (isValid) {
+      const login = await loginUser({ email: email, password: password });
     }
     
+  };
 
   return (
     <div className="w-[500px] ex-auto">
@@ -55,7 +57,9 @@ export default function LoginForm() {
               className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
               placeholder="Enter your email"
             />
-            {emailError &&<div className='text-red-600 text-sm mt-2 ml-2'>{emailError}</div>}
+            {emailError && (
+              <div className="text-red-600 text-sm mt-2 ml-2">{emailError}</div>
+            )}
           </div>
 
           {/* Add the password field */}
@@ -75,7 +79,11 @@ export default function LoginForm() {
               className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
               placeholder="................"
             />
-            {passwordError &&<div className='text-red-600 text-sm mt-2 ml-2'>{passwordError}</div>}
+            {passwordError && (
+              <div className="text-red-600 text-sm mt-2 ml-2">
+                {passwordError}
+              </div>
+            )}
           </div>
           {/* Add the remember me checkbox */}
           <div className="flex justify-between ">
