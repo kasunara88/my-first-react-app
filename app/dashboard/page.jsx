@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { getMovies } from '../libs/apis/server';
+=======
+import { getMovies } from "../libs/apis/server";
+>>>>>>> 472dfc4 (Dashboard Updated)
 export default async function DashboardPage() {
   // add shaadcn card
   const { movies } = await getMovies();
