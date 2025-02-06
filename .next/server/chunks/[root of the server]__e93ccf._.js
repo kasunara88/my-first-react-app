@@ -67,7 +67,7 @@ __turbopack_esm__({
 var __TURBOPACK__imported__module__$5b$externals$5d2f$mongodb__$5b$external$5d$__$28$mongodb$2c$__cjs$29$__ = __turbopack_import__("[externals]/mongodb [external] (mongodb, cjs)");
 ;
 const clientPromise = ()=>{
-    const MONGODB_URI = ("TURBOPACK compile-time value", "mongodb+srv://wmaravinda:<db_password>@clusterev01.qsyzk.mongodb.net/?retryWrites=true&w=majority&appName=ClusterEV01");
+    const MONGODB_URI = ("TURBOPACK compile-time value", "mongodb+srv://wmaravinda:881053578Ara@clusterev01.qsyzk.mongodb.net/?retryWrites=true&w=majority&appName=ClusterEV01");
     const option = {};
     if ("TURBOPACK compile-time falsy", 0) {
         "TURBOPACK unreachable";
@@ -90,128 +90,13 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$serv
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$libs$2f$mongodb$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/app/libs/mongodb.js [app-route] (ecmascript)");
 ;
 ;
-const MOVIES = [
-    {
-        id: 1,
-        title: "Harry Porter",
-        rating: 4.5,
-        genre: "Fantasy",
-        year: 2001,
-        director: "David Yates",
-        cast: [
-            "Daniel Radcliffe",
-            "Emma Watson",
-            "Rupert Grint"
-        ],
-        plot: "A young wizard finds his place in the world."
-    },
-    {
-        id: 2,
-        title: "The Lord of the Rings",
-        rating: 4.8,
-        genre: "Fantasy",
-        year: 2001,
-        director: "Peter Jackson",
-        cast: [
-            "Elijah Wood",
-            "Ian McKellen",
-            "Viggo Mortensen"
-        ],
-        plot: "A young hobbit finds his place in the world."
-    },
-    {
-        id: 3,
-        title: "The Matrix",
-        rating: 4.7,
-        genre: "Sci-Fi",
-        year: 1999,
-        director: "Lana Wachowski",
-        cast: [
-            "Keanu Reeves",
-            "Laurence Fishburne",
-            "Carrie-Anne Moss"
-        ],
-        plot: "A young hacker finds his place in the world."
-    },
-    {
-        id: 4,
-        title: "The Shawshank Redemption",
-        rating: 4.9,
-        genre: "Drama",
-        year: 1994,
-        director: "Frank Darabont",
-        cast: [
-            "Tim Robbins",
-            "Morgan Freeman",
-            "Bob Gunton"
-        ],
-        plot: "A young banker finds his place in the world."
-    },
-    {
-        id: 5,
-        title: "The Godfather",
-        rating: 4.9,
-        genre: "Crime",
-        year: 1972,
-        director: "Francis Ford Coppola",
-        cast: [
-            "Marlon Brando",
-            "Al Pacino",
-            "James Caan"
-        ],
-        plot: "A young mobster finds his place in the world."
-    },
-    {
-        id: 6,
-        title: "The Dark Knight",
-        rating: 4.8,
-        genre: "Action",
-        year: 2008,
-        director: "Christopher Nolan",
-        cast: [
-            "Christian Bale",
-            "Heath Ledger",
-            "Aaron Eckhart"
-        ],
-        plot: "A young vigilante finds his place in the world."
-    },
-    {
-        id: 7,
-        title: "The Lion King",
-        rating: 4.6,
-        genre: "Animation",
-        year: 1994,
-        director: "Roger Allers",
-        cast: [
-            "Matthew Broderick",
-            "Jeremy Irons",
-            "James Earl Jones"
-        ],
-        plot: "A young lion finds his place in the world."
-    },
-    {
-        id: 8,
-        title: "The Avengers",
-        rating: 4.7,
-        genre: "Action",
-        year: 2012,
-        director: "Joss Whedon",
-        cast: [
-            "Robert Downey Jr.",
-            "Chris Evans",
-            "Scarlett Johansson"
-        ],
-        plot: "A young superhero finds his place in the world."
-    }
-];
 const GET = async (req)=>{
-    // Get Movies from the MongoDB
+    //Get movies from database
     try {
         const client = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$libs$2f$mongodb$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"])();
-        // sample_mflix is the database name
-        const db = client.db("Sample FlixZone");
-        // fetch movies from the database
-        const movies = await db.collection("movies_n").find({}).sort({
+        const db = client.db("sample_mflix");
+        //Fetch Movies From the database
+        const movies = await db.collection("movies").find({}).sort({
             metacritic: -1
         }).limit(10).toArray();
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json(movies);
@@ -223,7 +108,88 @@ const GET = async (req)=>{
             status: 500
         });
     }
-};
+}; // const Movies = [
+ //   {
+ //     id: 1,
+ //     title: "Harry Porter",
+ //     rating: 4.5,
+ //     genre: "Fantasy",
+ //     year: 2001,
+ //     director: "David Yates",
+ //     cast: ["Daniel Radcliffe", "Emma Watson", "Rupert Grint"],
+ //     plot: "A young wizard finds his place in the world.",
+ //   },
+ //   {
+ //     id: 2,
+ //     title: "The Lord of the Rings",
+ //     rating: 4.8,
+ //     genre: "Fantasy",
+ //     year: 2001,
+ //     director: "Peter Jackson",
+ //     cast: ["Elijah Wood", "Ian McKellen", "Viggo Mortensen"],
+ //     plot: "A young hobbit finds his place in the world.",
+ //   },
+ //   {
+ //     id: 3,
+ //     title: "The Matrix",
+ //     rating: 4.7,
+ //     genre: "Sci-Fi",
+ //     year: 1999,
+ //     director: "Lana Wachowski",
+ //     cast: ["Keanu Reeves", "Laurence Fishburne", "Carrie-Anne Moss"],
+ //     plot: "A young hacker finds his place in the world.",
+ //   },
+ //   {
+ //     id: 4,
+ //     title: "The Shawshank Redemption",
+ //     rating: 4.9,
+ //     genre: "Drama",
+ //     year: 1994,
+ //     director: "Frank Darabont",
+ //     cast: ["Tim Robbins", "Morgan Freeman", "Bob Gunton"],
+ //     plot: "A young banker finds his place in the world.",
+ //   },
+ //   {
+ //     id: 5,
+ //     title: "The Godfather",
+ //     rating: 4.9,
+ //     genre: "Crime",
+ //     year: 1972,
+ //     director: "Francis Ford Coppola",
+ //     cast: ["Marlon Brando", "Al Pacino", "James Caan"],
+ //     plot: "A young mobster finds his place in the world.",
+ //   },
+ //   {
+ //     id: 6,
+ //     title: "The Dark Knight",
+ //     rating: 4.8,
+ //     genre: "Action",
+ //     year: 2008,
+ //     director: "Christopher Nolan",
+ //     cast: ["Christian Bale", "Heath Ledger", "Aaron Eckhart"],
+ //     plot: "A young vigilante finds his place in the world.",
+ //   },
+ //   {
+ //     id: 7,
+ //     title: "The Lion King",
+ //     rating: 4.6,
+ //     genre: "Animation",
+ //     year: 1994,
+ //     director: "Roger Allers",
+ //     cast: ["Matthew Broderick", "Jeremy Irons", "James Earl Jones"],
+ //     plot: "A young lion finds his place in the world.",
+ //   },
+ //   {
+ //     id: 8,
+ //     title: "The Avengers",
+ //     rating: 4.7,
+ //     genre: "Action",
+ //     year: 2012,
+ //     director: "Joss Whedon",
+ //     cast: ["Robert Downey Jr.", "Chris Evans", "Scarlett Johansson"],
+ //     plot: "A young superhero finds his place in the world.",
+ //   },
+ // ];
 }}),
 "[project]/ (server-utils)": ((__turbopack_context__) => {
 
