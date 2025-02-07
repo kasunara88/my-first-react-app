@@ -19,7 +19,7 @@ __turbopack_esm__({
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$ky$2f$distribution$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_import__("[project]/node_modules/ky/distribution/index.js [app-ssr] (ecmascript) <locals>");
 ;
 const api = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$ky$2f$distribution$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].create({
-    prefixUrl: process.env.NEXT_PUBLIC_API_URI,
+    prefixUrl: ("TURBOPACK compile-time value", "http://localhost:3000/api/v1/"),
     timeout: 60000,
     retry: 0
 });
@@ -36,36 +36,36 @@ __turbopack_esm__({
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$libs$2f$api$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/app/libs/api.js [app-ssr] (ecmascript)");
 ;
 const loginUser = async (loginData)=>{
-    const response = await fetch('http://localhost:3000/api/v1/login', {
-        method: 'POST',
+    const response = await fetch("http://localhost:3000/api/v1/login", {
+        method: "POST",
         body: JSON.stringify({
             email: loginData?.email,
             password: loginData?.password
         })
     });
-    console.log('LOGIN ACTION', response.json());
+    console.log("LOGIN ACTION", response.json());
 };
 const getMovies = async ()=>{
     try {
-        const response = await __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$libs$2f$api$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["api"].get('movies', {
-            caches: 'no-store'
+        const response = await __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$libs$2f$api$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["api"].get("movies", {
+            caches: "no-store"
         });
         if (response.ok) {
             return response.json();
         } else {
             return {
                 error: true,
-                message: 'Something went wrong'
+                message: "Something went wrong"
             };
         }
     } catch (error) {
         if (error) {
             const status = error?.response?.status; // HTTP status code (e.g. 404, 500)
             const responseBody = await error?.response?.json(); // JSON data parsed from response body
-            console.log('HTTP ERROR', status, responseBody);
+            console.log("HTTP ERROR", status, responseBody);
         } else {
             // Handle non-HTTP errors (e.g. network down, server down)
-            console.log('Unknown Error : ', error);
+            console.log("Unknown Error : ", error);
         }
         return undefined;
     }
