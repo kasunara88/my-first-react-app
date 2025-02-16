@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 46, "column": 0}, "map": {"version":3,"sources":["file:///Users/wijamunigekasunaravinda/Desktop/SEProject/ReactJS/my-first-react-app/app/api/v1/register/route.js"],"sourcesContent":["// import { NextResponse } from \"next/server\";\n\n// export const POST = async (req) => {\n//   const { name, email, password } = await req.json();\n//   console.log(name, email, password);\n\n//   if (!name || !email || !password) {\n//     return NextResponse.json(\n//       { error: \"Name, email and password are required\" },\n//       { status: 400 }\n//     );\n//   }\n\n//   return NextResponse.json({ success: true, name, email });\n// };\n"],"names":[],"mappings":"AAAA,8CAA8C;AAE9C,uCAAuC;AACvC,wDAAwD;AACxD,wCAAwC;AAExC,wCAAwC;AACxC,gCAAgC;AAChC,4DAA4D;AAC5D,wBAAwB;AACxB,SAAS;AACT,MAAM;AAEN,8DAA8D;AAC9D,KAAK"}},
+    {"offset": {"line": 58, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

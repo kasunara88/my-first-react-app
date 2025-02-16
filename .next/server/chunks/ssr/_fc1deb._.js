@@ -23,7 +23,8 @@ var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_
 {
 __turbopack_esm__({
     "getMovies": (()=>getMovies),
-    "loginUser": (()=>loginUser)
+    "loginUser": (()=>loginUser),
+    "registerUser": (()=>registerUser)
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$libs$2f$api$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/app/libs/api.js [app-rsc] (ecmascript)");
 ;
@@ -36,6 +37,16 @@ const loginUser = async (loginData)=>{
         })
     });
     console.log("LOGIN ACTION", response.json());
+};
+const registerUser = async (formData)=>{
+    try {
+        const response = await __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$libs$2f$api$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["api"].post("register", {
+            jason: formData
+        });
+    // console.log("REGISTER ACTION", response);
+    } catch (error) {
+        console.log("Registration Error", error);
+    }
 };
 const getMovies = async ()=>{
     try {
