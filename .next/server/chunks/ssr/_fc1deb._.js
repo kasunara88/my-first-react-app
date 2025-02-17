@@ -11,7 +11,7 @@ __turbopack_esm__({
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$ky$2f$distribution$2f$index$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_import__("[project]/node_modules/ky/distribution/index.js [app-rsc] (ecmascript) <locals>");
 ;
 const api = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$ky$2f$distribution$2f$index$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].create({
-    prefixUrl: ("TURBOPACK compile-time value", "http://localhost:3000/api/v1/"),
+    prefixUrl: process.env.API_BASE_URL,
     timeout: 60000,
     retry: 0
 });
@@ -40,17 +40,31 @@ const loginUser = async (loginData)=>{
 };
 const registerUser = async (formData)=>{
     try {
-        const response = await __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$libs$2f$api$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["api"].post("register", {
-            jason: formData
+        // console.log("Registration Data", formData);
+        const response = await __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$libs$2f$api$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["api"].post("v1/register", {
+            json: formData
         });
-    // console.log("REGISTER ACTION", response);
+        // console.log("Registration response", response);
+        if (response.ok) {
+            return response.json();
+        } else {
+            return undefined;
+        }
     } catch (error) {
-        console.log("Registration Error", error);
+        const status = error.response.status;
+        const responseBody = await error.response.json();
+        if (status & responseBody) {
+            if (status === 409) {
+                return responseBody;
+            }
+            return undefined;
+        }
+        return undefined;
     }
 };
 const getMovies = async ()=>{
     try {
-        const response = await __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$libs$2f$api$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["api"].get("movies", {
+        const response = await __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$libs$2f$api$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["api"].get("v1/movies", {
             caches: "no-store"
         });
         if (response.ok) {

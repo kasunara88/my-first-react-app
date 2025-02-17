@@ -67,10 +67,10 @@ __turbopack_esm__({
 var __TURBOPACK__imported__module__$5b$externals$5d2f$mongodb__$5b$external$5d$__$28$mongodb$2c$__cjs$29$__ = __turbopack_import__("[externals]/mongodb [external] (mongodb, cjs)");
 ;
 const clientPromise = ()=>{
-    const MONGODB_URI = ("TURBOPACK compile-time value", "mongodb+srv://wmaravinda:881053578Ara@clusterev01.qsyzk.mongodb.net/?retryWrites=true&w=majority&appName=ClusterEV01");
+    const MONGODB_URI = process.env.MONGODB_URI;
     const option = {};
-    if ("TURBOPACK compile-time falsy", 0) {
-        "TURBOPACK unreachable";
+    if (!MONGODB_URI) {
+        throw new Error('Invalid/Missing environment variable : "MONGODB_URI"');
     }
     const client = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongodb__$5b$external$5d$__$28$mongodb$2c$__cjs$29$__["MongoClient"](MONGODB_URI, option);
     return client.connect();

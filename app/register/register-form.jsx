@@ -12,9 +12,11 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { ToastAction } from "@/components/ui/toast";
 import Link from "next/link";
 import { useState } from "react";
-import { registerUser } from "@/app/libs/apis/server";
+import { registerUser } from "@/lib/apis/server";
+import { useToast } from "@/hooks/use-toast";
 
 const DEFAULT_ERROR = { error: false, message: "" };
 
@@ -22,11 +24,10 @@ const DEFAULT_ERROR = { error: false, message: "" };
 export default function RegisterForm() {
   const [error, setError] = useState(DEFAULT_ERROR);
   const [loading, setLoading] = useState(false);
+  const { toast } = useToast();
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event?.currentTarget);
-    // const name = formData.get("name");
-    // const email = formData.get("email");
     const name = formData.get("name").toString();
     const email = formData.get("email").toString();
     const password = formData.get("password") ?? "";
@@ -41,6 +42,17 @@ export default function RegisterForm() {
       // console.log("Register Response", registerResp);
       if (registerResp?.error) {
         setError({ error: true, message: registerResp.error });
+      } else {
+        toast({
+          variant: "success",
+          title: "Registration Successful.",
+          description: "Please Continue with login.",
+          action: (
+            <ToastAction altText="Login" className="hover:bg-green-700">
+              login
+            </ToastAction>
+          ),
+        });
       }
     } else {
       setError({ error: true, message: "Passwords do not match" });

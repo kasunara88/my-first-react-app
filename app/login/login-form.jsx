@@ -1,26 +1,26 @@
-'use client';
+"use client";
 // Cliend side component for the login form
-import React, { useState } from 'react';
-import { loginUser } from '../libs/apis/server';
+import React, { useState } from "react";
+import { loginUser } from "../../lib/apis/server";
 
 export default function LoginForm() {
-  const [email, setemail] = useState('');
-  const [password, setpasword] = useState('');
-  const [emailError, setemailError] = useState('');
-  const [passwordError, setpasswordError] = useState('');
+  const [email, setemail] = useState("");
+  const [password, setpasword] = useState("");
+  const [emailError, setemailError] = useState("");
+  const [passwordError, setpasswordError] = useState("");
 
   const validateForm = () => {
     if (!email) {
-      setemailError('Email is required');
+      setemailError("Email is required");
       return false;
     } else {
-      setemailError('');
+      setemailError("");
     }
     if (!password) {
-      setpasswordError('Password is required');
+      setpasswordError("Password is required");
       return false;
     } else {
-      setpasswordError('');
+      setpasswordError("");
     }
     return true;
   };
@@ -32,7 +32,6 @@ export default function LoginForm() {
     if (isValid) {
       const login = await loginUser({ email: email, password: password });
     }
-    
   };
 
   return (
@@ -113,7 +112,7 @@ export default function LoginForm() {
             type="submit"
             className="w-full text-white bg-blue-700 hover:bg-blue-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
           >
-            Sign In{' '}
+            Sign In{" "}
           </button>
           <div className="flex justify-center text-sm font-medium text-gray-500 space-x-2">
             <span>Don't have an account yet?</span>

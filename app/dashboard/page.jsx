@@ -1,4 +1,4 @@
-import { getMovies } from "@/app/libs/apis/server";
+import { getMovies } from "@/lib/apis/server";
 import { Badge } from "@/components/ui/badge";
 import { FaStar } from "react-icons/fa";
 import {
