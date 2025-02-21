@@ -1,7 +1,9 @@
 "use client";
 // Cliend side component for the login form
 import React, { useState } from "react";
-import { loginUser } from "../../lib/apis/server";
+import { signIn } from "@/lib/auth-client";
+import { redirect } from "next/navigation";
+// import { loginUser } from "../../lib/apis/server";
 
 export default function LoginForm() {
   const [email, setemail] = useState("");
@@ -30,7 +32,21 @@ export default function LoginForm() {
 
     const isValid = validateForm();
     if (isValid) {
-      const login = await loginUser({ email: email, password: password });
+      // const login = await loginUser({ email: email, password: password });
+      await signIn.email(
+        {
+          email,
+          password,
+        },
+        {
+          onSuccess: () => {
+            redirect("/dashboard");
+          },
+          onerror: (ctx) => {
+            console.log(ctx.error.message);
+          },
+        }
+      );
     }
   };
 
