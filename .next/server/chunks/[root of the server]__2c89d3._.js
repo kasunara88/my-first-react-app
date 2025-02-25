@@ -96,7 +96,7 @@ const GET = async (req)=>{
         const client = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$mongodb$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"])();
         const db = client.db("sample_mflix");
         //Fetch Movies From the database
-        const movies = await db.collection("movies").find({}).sort({
+        const movies = await db.collection("movies_n").find({}).sort({
             metacritic: -1
         }).limit(10).toArray();
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json(movies);

@@ -1,5 +1,5 @@
 "use client";
-// Cliend side component for the login form
+// Client side component for the login form
 import React, { useState } from "react";
 import { signIn } from "@/lib/auth-client";
 import { redirect } from "next/navigation";
