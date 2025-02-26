@@ -1,12 +1,17 @@
-import { getMovies } from "@/lib/apis/server";
-import { Eye } from "lucide-react";
 import Link from "next/link";
+import { Eye } from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import MovieData from "./movie-data";
 
-export default async function MoviePage() {
-  const moviesQuery = await getMovies();
-  console.log("MOVIES", moviesQuery);
-
+export default function MoviePage() {
   return (
     <div className="space-y-4">
       <div className="flex justify-end">
@@ -17,6 +22,15 @@ export default async function MoviePage() {
           </Button>
         </Link>
       </div>
+      <Card>
+        <CardHeader>
+          <CardTitle>Movies Management</CardTitle>
+          <CardDescription>View and Manage your movies here.</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <MovieData />
+        </CardContent>
+      </Card>
     </div>
   );
 }

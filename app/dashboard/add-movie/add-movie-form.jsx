@@ -75,76 +75,138 @@ export default function AddMovieForm() {
   };
 
   return (
-    <Card className="max-w-2xl mx-auto">
-      <CardHeader>
-        <CardTitle>Add Movies</CardTitle>
-        <CardDescription>Add a movie to the FlexZone database</CardDescription>
+    <Card className="max-w-2xl mx-auto drop-shadow-lg">
+      <CardHeader className="border-b">
+        <CardTitle className="text-2xl">Add Movies</CardTitle>
+        <CardDescription className="text-sm text-muted-foreground">
+          Fill in the details below to add a new movie to the FlexZone database
+        </CardDescription>
       </CardHeader>
       <form onSubmit={handleSubmitForm}>
-        <CardContent className="space-y-4">
-          <div>
-            <Label htmlFor="title">Movie Title</Label>
-            <Input
-              id="title"
-              name="title"
-              placeholder="Enter the movie title"
-            />
+        <CardContent className="space-y-6 pt-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="space-y-2">
+              <Label htmlFor="title" className="font-medium">
+                Movie Title <span className="text-red-600">*</span>
+              </Label>
+              <Input
+                id="title"
+                name="title"
+                placeholder="Enter the movie title"
+                required
+                className="focus-visible:ring-primary"
+              />
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="year" className="font-medium">
+                Movie Year <span className="text-red-600">*</span>
+              </Label>
+              <Input
+                id="year"
+                name="year"
+                type="number"
+                required
+                placeholder="Enter the year"
+                className="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none]"
+              />
+            </div>
           </div>
-          <div>
-            <Label htmlFor="year">Movie Year</Label>
-            <Input id="year" name="year" placeholder="Enter the year" />
-          </div>
-          <div>
-            <Label htmlFor="plot">Movie Plot</Label>
+          <div className="space-y-2">
+            <Label htmlFor="plot" className="font-medium">
+              Plot Summary <span className="text-red-500">*</span>
+            </Label>
             <Textarea
               id="plot"
               name="plot"
-              placeholder="Enter the movie plot"
+              placeholder="A compelling summary of the movie's storyline..."
+              required
+              className="min-h-[100px] focus-visible:ring-primary"
             />
           </div>
-          <div>
-            <Label htmlFor="genres">Movie Genres</Label>
-            <MultiSelect
-              list={genresList}
-              placeholder="Select Movie Genres"
-              onValueChange={setGenres}
-            />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="space-y-2">
+              <Label htmlFor="genres" className="font-medium">
+                Genres <span className="text-red-500">*</span>
+              </Label>
+              <MultiSelect
+                list={genresList}
+                placeholder="Select Movie Genres"
+                onValueChange={setGenres}
+                className="focus-visible:ring-primary"
+              />
+              <p className="text-xs text-muted-foreground mt-1">
+                Select up to 5 genres
+              </p>
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="rated" className="font-medium">
+                Rating
+              </Label>
+              <Select onValueChange={(val) => setRated(val)}>
+                <SelectTrigger className="focus-visible:ring-primary">
+                  <SelectValue placeholder="Select Rating" />
+                </SelectTrigger>
+                <SelectContent>
+                  {RATINGS.map((rating) => (
+                    <SelectItem key={rating} value={rating}>
+                      {rating}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
           </div>
-          <div>
-            <Label htmlFor="rated">Movie Rated</Label>
-            <Select onValueChange={(val) => setRated(val)}>
-              <SelectTrigger>
-                <SelectValue placeholder="Select Movie Rated" />
-              </SelectTrigger>
-              <SelectContent>
-                {RATINGS.map((rating) => (
-                  <SelectItem key={rating} value={rating}>
-                    {rating}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </div>
-          <div>
-            <Label htmlFor="poster">Poster URL</Label>
+
+          <div className="space-y-2">
+            <Label htmlFor="poster" className="font-medium">
+              Poster URL <span className="text-red-500">*</span>
+            </Label>
             <Input
               id="poster"
               name="poster"
-              type="text"
+              type="url"
               defaultValue="https://m.media-amazon.com/images/M/MV5BNTdkOTFlZj…mZkMDg0ZjFhY2Y4XkEyXkFqcGc@._V1_FMjpg_UY3000_.jpg"
               placeholder="Enter the poster URL"
+              required
+              className="focus-visible:ring-primary"
             />
+            <p className="text-xs text-muted-foreground mt-1">
+              Must be a valid HTTPS URL
+            </p>
           </div>
         </CardContent>
-        <CardFooter className="w-full flex justify-end space-x-2">
-          <Button type="reset" variant="outline">
-            Clear Form
-          </Button>
-          <Button type="submit" disabled={loading}>
-            {loading && <Loader2 className="animate-spin" />} Add Movie
-          </Button>
+        <CardFooter className="border-t py-6">
+          <div className="w-full flex justify-end gap-4">
+            <Button
+              type="reset"
+              variant="outline"
+              className="min-w-[120px]"
+              disabled={loading}
+            >
+              Reset
+            </Button>
+            <Button
+              type="submit"
+              className="min-w-[120px] bg-slate-600 hover:bg-primary/90"
+              disabled={loading}
+            >
+              {loading ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  Adding...
+                </>
+              ) : (
+                "Add Movie"
+              )}
+            </Button>
+          </div>
         </CardFooter>
       </form>
     </Card>
   );
 }
+
+//className="w-full flex justify-end space-x-2"
