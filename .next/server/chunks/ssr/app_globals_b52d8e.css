@@ -438,6 +438,21 @@ body {
   margin-bottom: .25rem;
 }
 
+.my-12 {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.my-7 {
+  margin-top: 1.75rem;
+  margin-bottom: 1.75rem;
+}
+
 .mb-2 {
   margin-bottom: .5rem;
 }
@@ -565,6 +580,10 @@ body {
   height: 1px;
 }
 
+.h-screen {
+  height: 100vh;
+}
+
 .max-h-96 {
   max-height: 24rem;
 }
@@ -657,8 +676,8 @@ body {
   min-width: var(--radix-select-trigger-width);
 }
 
-.max-w-4xl {
-  max-width: 56rem;
+.max-w-2xl {
+  max-width: 42rem;
 }
 
 .flex-1 {

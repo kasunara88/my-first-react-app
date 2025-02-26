@@ -913,10 +913,12 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$textarea
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$multi$2d$select$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/components/multi-select.jsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$constants$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/lib/constants.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$actions$2f$movie$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/lib/actions/movie.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$hooks$2f$use$2d$toast$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/hooks/use-toast.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$loader$2d$circle$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Loader2$3e$__ = __turbopack_import__("[project]/node_modules/lucide-react/dist/esm/icons/loader-circle.js [app-client] (ecmascript) <export default as Loader2>");
 ;
 var _s = __turbopack_refresh__.signature();
 "use client";
+;
 ;
 ;
 ;
@@ -933,6 +935,7 @@ function AddMovieForm() {
     const [genres, setGenres] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
     const [rated, setRated] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
+    const { toast } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$hooks$2f$use$2d$toast$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useToast"])();
     const genresList = __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$constants$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["GENRES"].map((genre)=>({
             label: genre,
             value: genre
@@ -944,6 +947,7 @@ function AddMovieForm() {
         const year = Number(formData.get("year"));
         //const year = formData.get("year").toString();
         const plot = formData.get("plot")?.toString();
+        const poster = formData.get("poster")?.toString();
         // const genres = formData.getAll("genres");
         // const rated = formData.get("rated").toString();
         // console.log("Form Data", formData);
@@ -952,27 +956,29 @@ function AddMovieForm() {
         // console.log("Plot", plot);
         // console.log("Genres", genres);
         // console.log("Rated", rated);
-        if (title && year && plot && rated) {
-            console.log({
-                title,
-                year,
-                plot,
-                rated,
-                genres
-            });
+        if (title && year && plot && rated && poster) {
+            // console.log({ title, year, plot, rated, genres });
             setLoading(true);
-            await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$actions$2f$movie$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createMovie"])({
+            const resp = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$actions$2f$movie$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createMovie"])({
                 title,
                 year,
                 plot,
                 rated,
-                genres
+                genres,
+                poster
             });
             setLoading(false);
+            if (resp.success) {
+                toast({
+                    variant: "success",
+                    title: "Movie added!",
+                    description: "Movie was added to FlexZone Dashboard"
+                });
+            }
         }
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
-        className: "w-full max-w-4xl mx-auto",
+        className: "max-w-2xl mx-auto",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardHeader"], {
                 children: [
@@ -980,20 +986,20 @@ function AddMovieForm() {
                         children: "Add Movies"
                     }, void 0, false, {
                         fileName: "[project]/app/dashboard/add-movie/add-movie-form.jsx",
-                        lineNumber: 63,
+                        lineNumber: 80,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardDescription"], {
                         children: "Add a movie to the FlexZone database"
                     }, void 0, false, {
                         fileName: "[project]/app/dashboard/add-movie/add-movie-form.jsx",
-                        lineNumber: 64,
+                        lineNumber: 81,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/dashboard/add-movie/add-movie-form.jsx",
-                lineNumber: 62,
+                lineNumber: 79,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -1009,7 +1015,7 @@ function AddMovieForm() {
                                         children: "Movie Title"
                                     }, void 0, false, {
                                         fileName: "[project]/app/dashboard/add-movie/add-movie-form.jsx",
-                                        lineNumber: 69,
+                                        lineNumber: 86,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -1018,13 +1024,13 @@ function AddMovieForm() {
                                         placeholder: "Enter the movie title"
                                     }, void 0, false, {
                                         fileName: "[project]/app/dashboard/add-movie/add-movie-form.jsx",
-                                        lineNumber: 70,
+                                        lineNumber: 87,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/dashboard/add-movie/add-movie-form.jsx",
-                                lineNumber: 68,
+                                lineNumber: 85,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1034,7 +1040,7 @@ function AddMovieForm() {
                                         children: "Movie Year"
                                     }, void 0, false, {
                                         fileName: "[project]/app/dashboard/add-movie/add-movie-form.jsx",
-                                        lineNumber: 77,
+                                        lineNumber: 94,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -1043,13 +1049,13 @@ function AddMovieForm() {
                                         placeholder: "Enter the year"
                                     }, void 0, false, {
                                         fileName: "[project]/app/dashboard/add-movie/add-movie-form.jsx",
-                                        lineNumber: 78,
+                                        lineNumber: 95,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/dashboard/add-movie/add-movie-form.jsx",
-                                lineNumber: 76,
+                                lineNumber: 93,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1059,7 +1065,7 @@ function AddMovieForm() {
                                         children: "Movie Plot"
                                     }, void 0, false, {
                                         fileName: "[project]/app/dashboard/add-movie/add-movie-form.jsx",
-                                        lineNumber: 81,
+                                        lineNumber: 98,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$textarea$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Textarea"], {
@@ -1068,13 +1074,13 @@ function AddMovieForm() {
                                         placeholder: "Enter the movie plot"
                                     }, void 0, false, {
                                         fileName: "[project]/app/dashboard/add-movie/add-movie-form.jsx",
-                                        lineNumber: 82,
+                                        lineNumber: 99,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/dashboard/add-movie/add-movie-form.jsx",
-                                lineNumber: 80,
+                                lineNumber: 97,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1084,7 +1090,7 @@ function AddMovieForm() {
                                         children: "Movie Genres"
                                     }, void 0, false, {
                                         fileName: "[project]/app/dashboard/add-movie/add-movie-form.jsx",
-                                        lineNumber: 89,
+                                        lineNumber: 106,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$multi$2d$select$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["MultiSelect"], {
@@ -1093,13 +1099,13 @@ function AddMovieForm() {
                                         onValueChange: setGenres
                                     }, void 0, false, {
                                         fileName: "[project]/app/dashboard/add-movie/add-movie-form.jsx",
-                                        lineNumber: 90,
+                                        lineNumber: 107,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/dashboard/add-movie/add-movie-form.jsx",
-                                lineNumber: 88,
+                                lineNumber: 105,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1109,7 +1115,7 @@ function AddMovieForm() {
                                         children: "Movie Rated"
                                     }, void 0, false, {
                                         fileName: "[project]/app/dashboard/add-movie/add-movie-form.jsx",
-                                        lineNumber: 97,
+                                        lineNumber: 114,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Select"], {
@@ -1120,12 +1126,12 @@ function AddMovieForm() {
                                                     placeholder: "Select Movie Rated"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/dashboard/add-movie/add-movie-form.jsx",
-                                                    lineNumber: 100,
+                                                    lineNumber: 117,
                                                     columnNumber: 17
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/app/dashboard/add-movie/add-movie-form.jsx",
-                                                lineNumber: 99,
+                                                lineNumber: 116,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectContent"], {
@@ -1134,30 +1140,57 @@ function AddMovieForm() {
                                                         children: rating
                                                     }, rating, false, {
                                                         fileName: "[project]/app/dashboard/add-movie/add-movie-form.jsx",
-                                                        lineNumber: 104,
+                                                        lineNumber: 121,
                                                         columnNumber: 19
                                                     }, this))
                                             }, void 0, false, {
                                                 fileName: "[project]/app/dashboard/add-movie/add-movie-form.jsx",
-                                                lineNumber: 102,
+                                                lineNumber: 119,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/dashboard/add-movie/add-movie-form.jsx",
-                                        lineNumber: 98,
+                                        lineNumber: 115,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/dashboard/add-movie/add-movie-form.jsx",
-                                lineNumber: 96,
+                                lineNumber: 113,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$label$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
+                                        htmlFor: "poster",
+                                        children: "Poster URL"
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/dashboard/add-movie/add-movie-form.jsx",
+                                        lineNumber: 129,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
+                                        id: "poster",
+                                        name: "poster",
+                                        type: "text",
+                                        defaultValue: "https://m.media-amazon.com/images/M/MV5BNTdkOTFlZj…mZkMDg0ZjFhY2Y4XkEyXkFqcGc@._V1_FMjpg_UY3000_.jpg",
+                                        placeholder: "Enter the poster URL"
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/dashboard/add-movie/add-movie-form.jsx",
+                                        lineNumber: 130,
+                                        columnNumber: 13
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/app/dashboard/add-movie/add-movie-form.jsx",
+                                lineNumber: 128,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/dashboard/add-movie/add-movie-form.jsx",
-                        lineNumber: 67,
+                        lineNumber: 84,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardFooter"], {
@@ -1169,7 +1202,7 @@ function AddMovieForm() {
                                 children: "Clear Form"
                             }, void 0, false, {
                                 fileName: "[project]/app/dashboard/add-movie/add-movie-form.jsx",
-                                lineNumber: 113,
+                                lineNumber: 140,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -1180,36 +1213,40 @@ function AddMovieForm() {
                                         className: "animate-spin"
                                     }, void 0, false, {
                                         fileName: "[project]/app/dashboard/add-movie/add-movie-form.jsx",
-                                        lineNumber: 117,
+                                        lineNumber: 144,
                                         columnNumber: 25
                                     }, this),
                                     " Add Movie"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/dashboard/add-movie/add-movie-form.jsx",
-                                lineNumber: 116,
+                                lineNumber: 143,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/dashboard/add-movie/add-movie-form.jsx",
-                        lineNumber: 112,
+                        lineNumber: 139,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/dashboard/add-movie/add-movie-form.jsx",
-                lineNumber: 66,
+                lineNumber: 83,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/dashboard/add-movie/add-movie-form.jsx",
-        lineNumber: 61,
+        lineNumber: 78,
         columnNumber: 5
     }, this);
 }
-_s(AddMovieForm, "chCBfCf+rZQVtwC+a6XarGGRJP0=");
+_s(AddMovieForm, "hov9JUALsbkNK4leKIARaPwhprE=", false, function() {
+    return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$hooks$2f$use$2d$toast$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useToast"]
+    ];
+});
 _c = AddMovieForm;
 var _c;
 __turbopack_refresh__.register(_c, "AddMovieForm");

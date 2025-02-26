@@ -123,8 +123,21 @@ const /*#__TURBOPACK_DISABLE_EXPORT_MERGING__*/ createMovie = async (movie)=>{
         //Create Movie Query
         const result = await db.collection("movies_n").insertOne(movie);
         console.log(`A Movie was inserted with the _id: ${result.insertedId}`);
-    } catch  {
-        console.log("Mongo insert failed");
+        if (result.acknowledged) {
+            return {
+                success: true
+            };
+        } else {
+            return {
+                success: false
+            };
+        }
+    } catch (error) {
+        console.log("Mongo insert failed", error);
+        return {
+            success: false,
+            error
+        };
     }
 };
 ;

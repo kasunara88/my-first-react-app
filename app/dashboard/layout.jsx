@@ -3,7 +3,7 @@ import UserNev from "./components/user-nev";
 
 export default function DashboardLayout({ children }) {
   return (
-    <div className="flex max-h-screen overflow-hidden bg-green-100">
+    <div className="flex h-screen overflow-hidden bg-green-100">
       <aside className="w-64 overflow-y-auto border-r bg-slate-100 shadow-lg">
         <SidePanel />
       </aside>
