@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///Users/wijamunigekasunaravinda/Desktop/SEProject/ReactJS/my-first-react-app/app/dashboard/movies/movie-table.jsx"],"sourcesContent":["\"use client\";\nexport default function MovieTable({ movies }) {\n  console.log(\"MOVIES\", movies);\n  return <div>MovieTable</div>;\n}\n"],"names":[],"mappings":";;;;AAAA;;AACe,SAAS,WAAW,EAAE,MAAM,EAAE;IAC3C,QAAQ,GAAG,CAAC,UAAU;IACtB,qBAAO,6LAAC;kBAAI;;;;;;AACd;KAHwB"}},
+    {"offset": {"line": 29, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

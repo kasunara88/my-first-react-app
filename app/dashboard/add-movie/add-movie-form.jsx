@@ -168,7 +168,6 @@ export default function AddMovieForm() {
               id="poster"
               name="poster"
               type="url"
-              defaultValue="https://m.media-amazon.com/images/M/MV5BNTdkOTFlZj…mZkMDg0ZjFhY2Y4XkEyXkFqcGc@._V1_FMjpg_UY3000_.jpg"
               placeholder="Enter the poster URL"
               required
               className="focus-visible:ring-primary"
