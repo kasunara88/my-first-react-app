@@ -6,7 +6,7 @@
   "path": "static/chunks/app_dashboard_movies_page_jsx_78334b._.js",
   "chunks": [
     "static/chunks/_be7e7c._.js",
-    "static/chunks/node_modules_31ae37._.js"
+    "static/chunks/node_modules_09a6d3._.js"
   ],
   "source": "dynamic"
 });

@@ -820,6 +820,10 @@ body {
   max-width: 400px;
 }
 
+.max-w-sm {
+  max-width: 24rem;
+}
+
 .flex-1 {
   flex: 1;
 }
@@ -2451,6 +2455,10 @@ body {
 
   .sm\:min-w-44 {
     min-width: 11rem;
+  }
+
+  .sm\:max-w-md {
+    max-width: 28rem;
   }
 
   .sm\:grid-cols-2 {
