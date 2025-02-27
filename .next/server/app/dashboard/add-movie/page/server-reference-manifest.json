@@ -11,7 +11,7 @@
         "app/dashboard/add-movie/page": "action-browser"
       }
     },
-    "7fb2153afd585cff01240ff19f6dd5f69d5b27eb4f": {
+    "7f6fc8e7f5687188ee8dd68b5b14cdb59018f24461": {
       "workers": {
         "app/dashboard/add-movie/page": {
           "moduleId": "[project]/.next-internal/server/app/dashboard/add-movie/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/actions/movie.js [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
@@ -22,7 +22,7 @@
         "app/dashboard/add-movie/page": "action-browser"
       }
     },
-    "7f6fc8e7f5687188ee8dd68b5b14cdb59018f24461": {
+    "7fb2153afd585cff01240ff19f6dd5f69d5b27eb4f": {
       "workers": {
         "app/dashboard/add-movie/page": {
           "moduleId": "[project]/.next-internal/server/app/dashboard/add-movie/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/actions/movie.js [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",

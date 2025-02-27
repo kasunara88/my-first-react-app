@@ -16,10 +16,10 @@ import {
 } from "@/components/ui/combobox";
 
 export function MultiSelect({
-  list,
+  list = [],
   label,
   placeholder,
-  selectedItems,
+  selectedItems = [],
   onValueChange,
 }) {
   return (
@@ -34,8 +34,11 @@ export function MultiSelect({
       {label && <ComboboxLabel>{label}</ComboboxLabel>}
       <ComboboxAnchor className="h-full min-h-10 flex-wrap px-3 py-2">
         <ComboboxBadgeList>
-          {selectedItems.map((item) => {
-            const option = list.find((trick) => trick.value === item);
+          {selectedItems?.map((item) => {
+            const option = (list || []).find(
+              (trick) => trick.value === item
+            ) || { label: "Unknown" };
+            // const option = list.find((trick) => trick.value === item);
             if (!option) return null;
 
             return (
@@ -59,7 +62,7 @@ export function MultiSelect({
       </ComboboxAnchor>
       <ComboboxContent>
         <ComboboxEmpty>No item found.</ComboboxEmpty>
-        {list.map((item) => (
+        {(list || []).map((item) => (
           <ComboboxItem key={item.value} value={item.value}>
             {item.label}
           </ComboboxItem>
@@ -68,3 +71,9 @@ export function MultiSelect({
     </Combobox>
   );
 }
+
+MultiSelect.defaultProps = {
+  list: [],
+  selectedItems: [],
+  onValueChange: () => {},
+};
