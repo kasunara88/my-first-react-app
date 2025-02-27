@@ -1,11 +1,10 @@
 import { Suspense } from "react";
 import Link from "next/link";
-import { Eye, Shell, Loader2, LayoutGrid, Plus } from "lucide-react";
+import { Eye, Loader2, LayoutGrid, Plus } from "lucide-react";
 import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
