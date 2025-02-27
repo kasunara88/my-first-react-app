@@ -13,6 +13,16 @@ import { useState } from "react";
 import EditMovieForm from "./edit-movie-form";
 import { updateMovie, deleteMovie } from "@/lib/actions/movie";
 import DeleteMovieDialog from "./delete-movie-dialog";
+import {
+  Star,
+  Calendar,
+  Film,
+  Ticket,
+  Clapperboard,
+  Trash2,
+  Edit,
+} from "lucide-react";
+import Image from "next/image";
 
 export default function MovieTable({ movies }) {
   const [isSaving, setIsSaving] = useState(false);
@@ -58,47 +68,93 @@ export default function MovieTable({ movies }) {
       router.refresh();
     }
   };
-
   return (
-    <div>
-      <Table>
-        <TableHeader>
+    <div className="w-full overflow-x-auto">
+      <Table className="min-w-full table-auto border border-gray-200">
+        {/* Table Header */}
+        <TableHeader className="bg-gray-100">
           <TableRow>
-            <TableHead className="font-bold">#Cover</TableHead>
-            <TableHead className="font-bold"> Movie Title</TableHead>
-            <TableHead className="font-bold">Year</TableHead>
-            <TableHead className="font-bold">Rating</TableHead>
-            <TableHead className="font-bold">IMDB</TableHead>
-            <TableHead className="font-bold">Genres</TableHead>
-            <TableHead className="font-bold text-center">Actions</TableHead>
+            <TableHead className="  px-4 py-2 font-semibold text-left">
+              Cover
+            </TableHead>
+            <TableHead className="px-4 py-2 font-semibold text-left">
+              Movie Title
+            </TableHead>
+            <TableHead className="px-4 py-2 font-semibold text-left">
+              Year
+            </TableHead>
+            <TableHead className="px-4 py-2 font-semibold text-left">
+              Rating
+            </TableHead>
+            <TableHead className="px-4 py-2 font-semibold text-left">
+              IMDb
+            </TableHead>
+            <TableHead className="px-4 py-2 font-semibold text-left">
+              Genres
+            </TableHead>
+            <TableHead className="px-4 py-2 font-semibold text-center">
+              Actions
+            </TableHead>
           </TableRow>
         </TableHeader>
+
+        {/* Table Body */}
         <TableBody>
           {movies.map((movie) => (
-            <TableRow key={movie.id}>
-              <TableCell>Poster URL</TableCell>
-              <TableCell>{movie?.title ?? "N/A"}</TableCell>
-              <TableCell>{movie?.year ?? "N/A"}</TableCell>
-              <TableCell>{movie?.rate ?? "N/A"}</TableCell>
-              <TableCell>{movie?.imdb?.rating ?? "N/A"}</TableCell>
-              <TableCell>{movie?.genres.join(", ") ?? "N/A"}</TableCell>
-              <TableCell>
-                <div className="flex justify-end space-x-2">
+            <TableRow
+              key={movie.id}
+              className="odd:bg-white even:bg-gray-50 hover:bg-gray-100"
+            >
+              <TableCell className="px-4 py-2">
+                <div className="h-[70px] w-[50px] overflow-hidden bg-gray-200 rounded-md flex items-center justify-center">
+                  {movie.poster ? (
+                    <img
+                      src={movie.poster}
+                      alt={`${movie.title} poster`}
+                      className="h-full w-auto object-cover"
+                    />
+                  ) : (
+                    <span className="text-xs text-gray-500">No Image</span>
+                  )}
+                </div>
+              </TableCell>
+              <TableCell className="px-4 py-2">
+                {movie?.title ?? "N/A"}
+              </TableCell>
+              <TableCell className="px-4 py-2">
+                {movie?.year ?? "N/A"}
+              </TableCell>
+              <TableCell className="px-4 py-2">
+                {movie?.rate ?? "N/A"}
+              </TableCell>
+              <TableCell className="px-4 py-2">
+                <div className="flex items-center justify-end gap-1">
+                  <Star className="h-4 w-4 text-yellow-500 fill-yellow-500" />
+                  <span>{movie?.imdb?.rating?.toFixed(1) ?? "N/A"}</span>
+                </div>
+              </TableCell>
+              <TableCell className="px-4 py-2">
+                {movie?.genres.join(", ") ?? "N/A"}
+              </TableCell>
+              <TableCell className="px-4 py-2 text-center">
+                <div className="flex justify-center gap-2">
                   <Button
                     variant="outline"
                     size="sm"
-                    className="min-w-[120px"
+                    className="h-8 gap-1"
                     onClick={() => handleEdit(movie)}
                   >
-                    Edit
+                    <Edit className="h-3.5 w-3.5" />
+                    <span className="sr-only">Edit</span>
                   </Button>
                   <Button
                     variant="destructive"
                     size="sm"
-                    className="min-w-[120px"
+                    className="h-8 gap-1"
                     onClick={() => handleDelete(movie)}
                   >
-                    Delete
+                    <Trash2 className="h-3.5 w-3.5" />
+                    <span className="sr-only">Delete</span>
                   </Button>
                 </div>
               </TableCell>
@@ -106,6 +162,8 @@ export default function MovieTable({ movies }) {
           ))}
         </TableBody>
       </Table>
+
+      {/* Edit and Delete Modals */}
       {editingMovie && (
         <EditMovieForm
           movie={editingMovie}

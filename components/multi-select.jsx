@@ -1,6 +1,5 @@
-//("use client");
+"use client";
 
-import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import {
   Combobox,
@@ -38,7 +37,6 @@ export function MultiSelect({
             const option = (list || []).find(
               (trick) => trick.value === item
             ) || { label: "Unknown" };
-            // const option = list.find((trick) => trick.value === item);
             if (!option) return null;
 
             return (

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Loader2,
   AlertCircle,
@@ -41,9 +41,17 @@ export default function EditMovieForm({
   const [year, setYear] = useState(movie?.year);
   const [plot, setPlot] = useState(movie?.plot);
   const [poster, setPoster] = useState(movie?.poster);
-  const [genres, setGenres] = useState(movie?.genres);
   const [rated, setRated] = useState(movie?.rated);
   const [imdbRating, setIMBbRating] = useState(movie.imdb?.rating ?? 0);
+  const [genres, setGenres] = useState([]);
+
+  useEffect(() => {
+    if (movie) {
+      const initialGenres =
+        movie.genres?.map((g) => (typeof g === "object" ? g.value : g)) || [];
+      setGenres(initialGenres);
+    }
+  }, [movie]);
 
   const genresList = GENRES.map((genre) => ({
     label: genre,
@@ -142,9 +150,9 @@ export default function EditMovieForm({
                 placeholder="Select genres..."
                 className="border-2 border-muted focus:border-primary"
               />
-              <p className="text-sm text-muted-foreground">
+              {/* <p className="text-sm text-muted-foreground">
                 {5 - genres.length} selections remaining
-              </p>
+              </p> */}
             </div>
 
             {/* Content Rating */}
