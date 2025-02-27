@@ -915,17 +915,13 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$combobox$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/components/ui/combobox.jsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$down$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronDown$3e$__ = __turbopack_import__("[project]/node_modules/lucide-react/dist/esm/icons/chevron-down.js [app-client] (ecmascript) <export default as ChevronDown>");
 ;
-var _s = __turbopack_refresh__.signature();
 ;
 ;
 ;
-function MultiSelect({ list, label, placeholder, onValueChange }) {
-    _s();
-    const [value, setValue] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
+function MultiSelect({ list, label, placeholder, selectedItems, onValueChange }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$combobox$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Combobox"], {
-        value: value,
+        value: selectedItems,
         onValueChange: (val)=>{
-            setValue(val);
             onValueChange(val);
         },
         className: "w-full",
@@ -935,14 +931,14 @@ function MultiSelect({ list, label, placeholder, onValueChange }) {
                 children: label
             }, void 0, false, {
                 fileName: "[project]/components/multi-select.jsx",
-                lineNumber: 31,
+                lineNumber: 34,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$combobox$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ComboboxAnchor"], {
                 className: "h-full min-h-10 flex-wrap px-3 py-2",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$combobox$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ComboboxBadgeList"], {
-                        children: value.map((item)=>{
+                        children: selectedItems.map((item)=>{
                             const option = list.find((trick)=>trick.value === item);
                             if (!option) return null;
                             return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$combobox$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ComboboxBadgeItem"], {
@@ -951,13 +947,13 @@ function MultiSelect({ list, label, placeholder, onValueChange }) {
                                 children: option.label
                             }, item, false, {
                                 fileName: "[project]/components/multi-select.jsx",
-                                lineNumber: 39,
+                                lineNumber: 42,
                                 columnNumber: 15
                             }, this);
                         })
                     }, void 0, false, {
                         fileName: "[project]/components/multi-select.jsx",
-                        lineNumber: 33,
+                        lineNumber: 36,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$combobox$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ComboboxInput"], {
@@ -965,7 +961,7 @@ function MultiSelect({ list, label, placeholder, onValueChange }) {
                         className: "h-auto min-w-32 flex-1 mr-5"
                     }, void 0, false, {
                         fileName: "[project]/components/multi-select.jsx",
-                        lineNumber: 49,
+                        lineNumber: 52,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$combobox$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ComboboxTrigger"], {
@@ -974,18 +970,18 @@ function MultiSelect({ list, label, placeholder, onValueChange }) {
                             className: "h-4 w-4"
                         }, void 0, false, {
                             fileName: "[project]/components/multi-select.jsx",
-                            lineNumber: 54,
+                            lineNumber: 57,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/multi-select.jsx",
-                        lineNumber: 53,
+                        lineNumber: 56,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/multi-select.jsx",
-                lineNumber: 32,
+                lineNumber: 35,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$combobox$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ComboboxContent"], {
@@ -994,7 +990,7 @@ function MultiSelect({ list, label, placeholder, onValueChange }) {
                         children: "No item found."
                     }, void 0, false, {
                         fileName: "[project]/components/multi-select.jsx",
-                        lineNumber: 58,
+                        lineNumber: 61,
                         columnNumber: 9
                     }, this),
                     list.map((item)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$combobox$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ComboboxItem"], {
@@ -1002,23 +998,22 @@ function MultiSelect({ list, label, placeholder, onValueChange }) {
                             children: item.label
                         }, item.value, false, {
                             fileName: "[project]/components/multi-select.jsx",
-                            lineNumber: 60,
+                            lineNumber: 63,
                             columnNumber: 11
                         }, this))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/multi-select.jsx",
-                lineNumber: 57,
+                lineNumber: 60,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/multi-select.jsx",
-        lineNumber: 22,
+        lineNumber: 26,
         columnNumber: 5
     }, this);
 }
-_s(MultiSelect, "nXyUXLCLqjbO8MhWxJGJNfpoKZM=");
 _c = MultiSelect;
 var _c;
 __turbopack_refresh__.register(_c, "MultiSelect");
@@ -1086,6 +1081,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$textarea$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/components/ui/textarea.jsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$multi$2d$select$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/components/multi-select.jsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$constants$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/lib/constants.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$events$2f$events$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/dist/compiled/events/events.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$loader$2d$circle$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Loader2$3e$__ = __turbopack_import__("[project]/node_modules/lucide-react/dist/esm/icons/loader-circle.js [app-client] (ecmascript) <export default as Loader2>");
 ;
 var _s = __turbopack_refresh__.signature();
@@ -1100,7 +1096,8 @@ var _s = __turbopack_refresh__.signature();
 ;
 ;
 ;
-function EditMovieForm({ movie, open, onCancel, loading }) {
+;
+function EditMovieForm({ movie, open, onSubmit, onCancel, loading }) {
     _s();
     const [title, setTitle] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(movie?.title);
     const [year, setYear] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(movie?.year);
@@ -1113,7 +1110,22 @@ function EditMovieForm({ movie, open, onCancel, loading }) {
             label: genre,
             value: genre
         }));
-    const handleSubmitForm = ()=>{};
+    const handleSubmitForm = (e)=>{
+        e.preventDefault();
+        //Save the updated movie to database
+        onSubmit({
+            ...movie,
+            title,
+            year,
+            genres,
+            poster,
+            rated,
+            imdb: {
+                rating: imdbRating
+            },
+            plot
+        });
+    };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dialog$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Dialog"], {
         open: open,
         onOpenChange: onCancel,
@@ -1125,20 +1137,20 @@ function EditMovieForm({ movie, open, onCancel, loading }) {
                             children: "Edit Movie"
                         }, void 0, false, {
                             fileName: "[project]/app/dashboard/movies/edit-movie-form.jsx",
-                            lineNumber: 43,
+                            lineNumber: 64,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dialog$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogDescription"], {
                             children: "Update the Selected Movie"
                         }, void 0, false, {
                             fileName: "[project]/app/dashboard/movies/edit-movie-form.jsx",
-                            lineNumber: 44,
+                            lineNumber: 65,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/dashboard/movies/edit-movie-form.jsx",
-                    lineNumber: 42,
+                    lineNumber: 63,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -1155,20 +1167,10 @@ function EditMovieForm({ movie, open, onCancel, loading }) {
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$label$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
                                                 htmlFor: "title",
                                                 className: "font-medium",
-                                                children: [
-                                                    "Movie Title ",
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "text-red-600",
-                                                        children: "*"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/app/dashboard/movies/edit-movie-form.jsx",
-                                                        lineNumber: 52,
-                                                        columnNumber: 31
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
+                                                children: "Movie Title"
+                                            }, void 0, false, {
                                                 fileName: "[project]/app/dashboard/movies/edit-movie-form.jsx",
-                                                lineNumber: 51,
+                                                lineNumber: 72,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -1177,17 +1179,16 @@ function EditMovieForm({ movie, open, onCancel, loading }) {
                                                 value: title,
                                                 onChange: (e)=>setTitle(e.target.value),
                                                 placeholder: "Enter the movie title",
-                                                required: true,
                                                 className: "focus-visible:ring-primary"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/dashboard/movies/edit-movie-form.jsx",
-                                                lineNumber: 54,
+                                                lineNumber: 75,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/dashboard/movies/edit-movie-form.jsx",
-                                        lineNumber: 50,
+                                        lineNumber: 71,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1196,20 +1197,10 @@ function EditMovieForm({ movie, open, onCancel, loading }) {
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$label$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
                                                 htmlFor: "year",
                                                 className: "font-medium",
-                                                children: [
-                                                    "Movie Year ",
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "text-red-600",
-                                                        children: "*"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/app/dashboard/movies/edit-movie-form.jsx",
-                                                        lineNumber: 67,
-                                                        columnNumber: 30
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
+                                                children: "Movie Year"
+                                            }, void 0, false, {
                                                 fileName: "[project]/app/dashboard/movies/edit-movie-form.jsx",
-                                                lineNumber: 66,
+                                                lineNumber: 86,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -1218,24 +1209,23 @@ function EditMovieForm({ movie, open, onCancel, loading }) {
                                                 value: year,
                                                 onChange: (e)=>setYear(Number(e.target.value)),
                                                 type: "number",
-                                                required: true,
                                                 placeholder: "Enter the year",
                                                 className: "[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none]"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/dashboard/movies/edit-movie-form.jsx",
-                                                lineNumber: 69,
+                                                lineNumber: 89,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/dashboard/movies/edit-movie-form.jsx",
-                                        lineNumber: 65,
+                                        lineNumber: 85,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/dashboard/movies/edit-movie-form.jsx",
-                                lineNumber: 49,
+                                lineNumber: 70,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1244,20 +1234,10 @@ function EditMovieForm({ movie, open, onCancel, loading }) {
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$label$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
                                         htmlFor: "plot",
                                         className: "font-medium",
-                                        children: [
-                                            "Plot Summary ",
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "text-red-500",
-                                                children: "*"
-                                            }, void 0, false, {
-                                                fileName: "[project]/app/dashboard/movies/edit-movie-form.jsx",
-                                                lineNumber: 83,
-                                                columnNumber: 30
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
+                                        children: "Plot Summary"
+                                    }, void 0, false, {
                                         fileName: "[project]/app/dashboard/movies/edit-movie-form.jsx",
-                                        lineNumber: 82,
+                                        lineNumber: 101,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$textarea$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Textarea"], {
@@ -1266,17 +1246,16 @@ function EditMovieForm({ movie, open, onCancel, loading }) {
                                         value: plot,
                                         onChange: (e)=>setPlot(e.target.value),
                                         placeholder: "A compelling summary of the movie's storyline...",
-                                        required: true,
                                         className: "min-h-[100px] focus-visible:ring-primary"
                                     }, void 0, false, {
                                         fileName: "[project]/app/dashboard/movies/edit-movie-form.jsx",
-                                        lineNumber: 85,
+                                        lineNumber: 104,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/dashboard/movies/edit-movie-form.jsx",
-                                lineNumber: 81,
+                                lineNumber: 100,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1288,30 +1267,21 @@ function EditMovieForm({ movie, open, onCancel, loading }) {
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$label$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
                                                 htmlFor: "genres",
                                                 className: "font-medium",
-                                                children: [
-                                                    "Genres ",
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "text-red-500",
-                                                        children: "*"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/app/dashboard/movies/edit-movie-form.jsx",
-                                                        lineNumber: 99,
-                                                        columnNumber: 26
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
+                                                children: "Genres"
+                                            }, void 0, false, {
                                                 fileName: "[project]/app/dashboard/movies/edit-movie-form.jsx",
-                                                lineNumber: 98,
+                                                lineNumber: 116,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$multi$2d$select$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["MultiSelect"], {
                                                 list: genresList,
                                                 placeholder: "Select Movie Genres",
+                                                selectedItems: genres,
                                                 onValueChange: setGenres,
                                                 className: "focus-visible:ring-primary"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/dashboard/movies/edit-movie-form.jsx",
-                                                lineNumber: 101,
+                                                lineNumber: 119,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1319,13 +1289,13 @@ function EditMovieForm({ movie, open, onCancel, loading }) {
                                                 children: "Select up to 5 genres"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/dashboard/movies/edit-movie-form.jsx",
-                                                lineNumber: 107,
+                                                lineNumber: 126,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/dashboard/movies/edit-movie-form.jsx",
-                                        lineNumber: 97,
+                                        lineNumber: 115,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1337,7 +1307,7 @@ function EditMovieForm({ movie, open, onCancel, loading }) {
                                                 children: "Rating"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/dashboard/movies/edit-movie-form.jsx",
-                                                lineNumber: 113,
+                                                lineNumber: 132,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Select"], {
@@ -1350,12 +1320,12 @@ function EditMovieForm({ movie, open, onCancel, loading }) {
                                                             placeholder: "Select Rating"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/dashboard/movies/edit-movie-form.jsx",
-                                                            lineNumber: 118,
+                                                            lineNumber: 137,
                                                             columnNumber: 21
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/dashboard/movies/edit-movie-form.jsx",
-                                                        lineNumber: 117,
+                                                        lineNumber: 136,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectContent"], {
@@ -1364,30 +1334,60 @@ function EditMovieForm({ movie, open, onCancel, loading }) {
                                                                 children: rating
                                                             }, rating, false, {
                                                                 fileName: "[project]/app/dashboard/movies/edit-movie-form.jsx",
-                                                                lineNumber: 122,
+                                                                lineNumber: 141,
                                                                 columnNumber: 23
                                                             }, this))
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/dashboard/movies/edit-movie-form.jsx",
-                                                        lineNumber: 120,
+                                                        lineNumber: 139,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/dashboard/movies/edit-movie-form.jsx",
-                                                lineNumber: 116,
+                                                lineNumber: 135,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/dashboard/movies/edit-movie-form.jsx",
-                                        lineNumber: 112,
+                                        lineNumber: 131,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/dashboard/movies/edit-movie-form.jsx",
-                                lineNumber: 96,
+                                lineNumber: 114,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$label$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
+                                        htmlFor: "imdb",
+                                        children: "IMDb Rating"
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/dashboard/movies/edit-movie-form.jsx",
+                                        lineNumber: 150,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
+                                        id: "imdb",
+                                        name: "imdb",
+                                        max: "10.0",
+                                        step: "0.1",
+                                        type: "number",
+                                        placeholder: "Enter imdb rating",
+                                        value: imdbRating,
+                                        onChange: (e)=>setIMBbRating(Number(e.target.value))
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/dashboard/movies/edit-movie-form.jsx",
+                                        lineNumber: 151,
+                                        columnNumber: 15
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/app/dashboard/movies/edit-movie-form.jsx",
+                                lineNumber: 149,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1396,34 +1396,23 @@ function EditMovieForm({ movie, open, onCancel, loading }) {
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$label$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
                                         htmlFor: "poster",
                                         className: "font-medium",
-                                        children: [
-                                            "Poster URL ",
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "text-red-500",
-                                                children: "*"
-                                            }, void 0, false, {
-                                                fileName: "[project]/app/dashboard/movies/edit-movie-form.jsx",
-                                                lineNumber: 133,
-                                                columnNumber: 28
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
+                                        children: "Poster URL"
+                                    }, void 0, false, {
                                         fileName: "[project]/app/dashboard/movies/edit-movie-form.jsx",
-                                        lineNumber: 132,
+                                        lineNumber: 164,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
                                         id: "poster",
                                         name: "poster",
-                                        type: "url",
+                                        type: "name",
                                         value: poster,
                                         onChange: (e)=>setPoster(e.target.value),
                                         placeholder: "Enter the poster URL",
-                                        required: true,
                                         className: "focus-visible:ring-primary"
                                     }, void 0, false, {
                                         fileName: "[project]/app/dashboard/movies/edit-movie-form.jsx",
-                                        lineNumber: 135,
+                                        lineNumber: 167,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1431,13 +1420,13 @@ function EditMovieForm({ movie, open, onCancel, loading }) {
                                         children: "Must be a valid HTTPS URL"
                                     }, void 0, false, {
                                         fileName: "[project]/app/dashboard/movies/edit-movie-form.jsx",
-                                        lineNumber: 145,
+                                        lineNumber: 176,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/dashboard/movies/edit-movie-form.jsx",
-                                lineNumber: 131,
+                                lineNumber: 163,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1453,7 +1442,7 @@ function EditMovieForm({ movie, open, onCancel, loading }) {
                                             children: "Reset"
                                         }, void 0, false, {
                                             fileName: "[project]/app/dashboard/movies/edit-movie-form.jsx",
-                                            lineNumber: 152,
+                                            lineNumber: 183,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -1466,7 +1455,7 @@ function EditMovieForm({ movie, open, onCancel, loading }) {
                                                         className: "mr-2 h-4 w-4 animate-spin"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/dashboard/movies/edit-movie-form.jsx",
-                                                        lineNumber: 167,
+                                                        lineNumber: 198,
                                                         columnNumber: 23
                                                     }, this),
                                                     "Adding..."
@@ -1474,40 +1463,40 @@ function EditMovieForm({ movie, open, onCancel, loading }) {
                                             }, void 0, true) : "Add Movie"
                                         }, void 0, false, {
                                             fileName: "[project]/app/dashboard/movies/edit-movie-form.jsx",
-                                            lineNumber: 160,
+                                            lineNumber: 191,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/dashboard/movies/edit-movie-form.jsx",
-                                    lineNumber: 151,
+                                    lineNumber: 182,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/dashboard/movies/edit-movie-form.jsx",
-                                lineNumber: 150,
+                                lineNumber: 181,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/dashboard/movies/edit-movie-form.jsx",
-                        lineNumber: 48,
+                        lineNumber: 69,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/dashboard/movies/edit-movie-form.jsx",
-                    lineNumber: 47,
+                    lineNumber: 68,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/app/dashboard/movies/edit-movie-form.jsx",
-            lineNumber: 41,
+            lineNumber: 62,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/dashboard/movies/edit-movie-form.jsx",
-        lineNumber: 40,
+        lineNumber: 61,
         columnNumber: 5
     }, this);
 }
@@ -1528,6 +1517,7 @@ __turbopack_esm__({
     "default": (()=>MovieTable)
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/navigation.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/components/ui/button.jsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$table$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/components/ui/table.jsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
@@ -1539,13 +1529,34 @@ var _s = __turbopack_refresh__.signature();
 ;
 ;
 ;
+;
 function MovieTable({ movies }) {
     _s();
+    const [isSaving, setIsSaving] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [editingMovie, setEditingMovie] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     const [deletingMovie, setDeletingMovie] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
+    const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
     const handleEdit = (movie)=>{
         console.log("Edit", movie);
         setEditingMovie(movie);
+    };
+    const handleEditSubmit = async (movie)=>{
+        const { id, title, year, plot, rated, genres, poster, imdb } = movie;
+        setIsSaving(true);
+        const resp = await updateMovie(id, {
+            title,
+            year,
+            plot,
+            rated,
+            genres,
+            poster,
+            imdb
+        });
+        setIsSaving(false);
+        if (resp.success) {
+            setEditingMovie(null);
+            router.refresh();
+        }
     };
     const handleDelete = (movie)=>{
         console.log("Delete", movie);
@@ -1563,7 +1574,7 @@ function MovieTable({ movies }) {
                                     children: "#Cover"
                                 }, void 0, false, {
                                     fileName: "[project]/app/dashboard/movies/movie-table.jsx",
-                                    lineNumber: 32,
+                                    lineNumber: 54,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$table$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TableHead"], {
@@ -1571,7 +1582,7 @@ function MovieTable({ movies }) {
                                     children: " Movie Title"
                                 }, void 0, false, {
                                     fileName: "[project]/app/dashboard/movies/movie-table.jsx",
-                                    lineNumber: 33,
+                                    lineNumber: 55,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$table$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TableHead"], {
@@ -1579,7 +1590,7 @@ function MovieTable({ movies }) {
                                     children: "Year"
                                 }, void 0, false, {
                                     fileName: "[project]/app/dashboard/movies/movie-table.jsx",
-                                    lineNumber: 34,
+                                    lineNumber: 56,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$table$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TableHead"], {
@@ -1587,7 +1598,7 @@ function MovieTable({ movies }) {
                                     children: "Rating"
                                 }, void 0, false, {
                                     fileName: "[project]/app/dashboard/movies/movie-table.jsx",
-                                    lineNumber: 35,
+                                    lineNumber: 57,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$table$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TableHead"], {
@@ -1595,7 +1606,7 @@ function MovieTable({ movies }) {
                                     children: "IMDB"
                                 }, void 0, false, {
                                     fileName: "[project]/app/dashboard/movies/movie-table.jsx",
-                                    lineNumber: 36,
+                                    lineNumber: 58,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$table$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TableHead"], {
@@ -1603,7 +1614,7 @@ function MovieTable({ movies }) {
                                     children: "Genres"
                                 }, void 0, false, {
                                     fileName: "[project]/app/dashboard/movies/movie-table.jsx",
-                                    lineNumber: 37,
+                                    lineNumber: 59,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$table$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TableHead"], {
@@ -1611,18 +1622,18 @@ function MovieTable({ movies }) {
                                     children: "Actions"
                                 }, void 0, false, {
                                     fileName: "[project]/app/dashboard/movies/movie-table.jsx",
-                                    lineNumber: 38,
+                                    lineNumber: 60,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/dashboard/movies/movie-table.jsx",
-                            lineNumber: 31,
+                            lineNumber: 53,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/dashboard/movies/movie-table.jsx",
-                        lineNumber: 30,
+                        lineNumber: 52,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$table$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TableBody"], {
@@ -1632,42 +1643,42 @@ function MovieTable({ movies }) {
                                         children: "Poster URL"
                                     }, void 0, false, {
                                         fileName: "[project]/app/dashboard/movies/movie-table.jsx",
-                                        lineNumber: 44,
+                                        lineNumber: 66,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$table$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TableCell"], {
                                         children: movie?.title ?? "N/A"
                                     }, void 0, false, {
                                         fileName: "[project]/app/dashboard/movies/movie-table.jsx",
-                                        lineNumber: 45,
+                                        lineNumber: 67,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$table$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TableCell"], {
                                         children: movie?.year ?? "N/A"
                                     }, void 0, false, {
                                         fileName: "[project]/app/dashboard/movies/movie-table.jsx",
-                                        lineNumber: 46,
+                                        lineNumber: 68,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$table$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TableCell"], {
                                         children: movie?.rate ?? "N/A"
                                     }, void 0, false, {
                                         fileName: "[project]/app/dashboard/movies/movie-table.jsx",
-                                        lineNumber: 47,
+                                        lineNumber: 69,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$table$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TableCell"], {
                                         children: movie?.imdb?.rating ?? "N/A"
                                     }, void 0, false, {
                                         fileName: "[project]/app/dashboard/movies/movie-table.jsx",
-                                        lineNumber: 48,
+                                        lineNumber: 70,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$table$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TableCell"], {
                                         children: movie?.genres.join(", ") ?? "N/A"
                                     }, void 0, false, {
                                         fileName: "[project]/app/dashboard/movies/movie-table.jsx",
-                                        lineNumber: 49,
+                                        lineNumber: 71,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$table$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TableCell"], {
@@ -1682,7 +1693,7 @@ function MovieTable({ movies }) {
                                                     children: "Edit"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/dashboard/movies/movie-table.jsx",
-                                                    lineNumber: 52,
+                                                    lineNumber: 74,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -1693,55 +1704,60 @@ function MovieTable({ movies }) {
                                                     children: "Delete"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/dashboard/movies/movie-table.jsx",
-                                                    lineNumber: 60,
+                                                    lineNumber: 82,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/dashboard/movies/movie-table.jsx",
-                                            lineNumber: 51,
+                                            lineNumber: 73,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/dashboard/movies/movie-table.jsx",
-                                        lineNumber: 50,
+                                        lineNumber: 72,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, movie.id, true, {
                                 fileName: "[project]/app/dashboard/movies/movie-table.jsx",
-                                lineNumber: 43,
+                                lineNumber: 65,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/app/dashboard/movies/movie-table.jsx",
-                        lineNumber: 41,
+                        lineNumber: 63,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/dashboard/movies/movie-table.jsx",
-                lineNumber: 29,
+                lineNumber: 51,
                 columnNumber: 7
             }, this),
             editingMovie && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$dashboard$2f$movies$2f$edit$2d$movie$2d$form$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                 movie: editingMovie,
                 open: true,
+                onSubmit: handleEditSubmit,
                 onCancel: ()=>setEditingMovie(null),
-                loading: true
+                loading: isSaving
             }, void 0, false, {
                 fileName: "[project]/app/dashboard/movies/movie-table.jsx",
-                lineNumber: 75,
+                lineNumber: 97,
                 columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/dashboard/movies/movie-table.jsx",
-        lineNumber: 28,
+        lineNumber: 50,
         columnNumber: 5
     }, this);
 }
-_s(MovieTable, "mWIoQj+dW4QfHM10IdJ/o6h2sY0=");
+_s(MovieTable, "hI/4HUIaQMVjkzIQtoCcuq4eqT0=", false, function() {
+    return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"]
+    ];
+});
 _c = MovieTable;
 var _c;
 __turbopack_refresh__.register(_c, "MovieTable");

@@ -22,7 +22,13 @@ import { Textarea } from "@/components/ui/textarea";
 import { MultiSelect } from "@/components/multi-select";
 import { GENRES, RATINGS } from "@/lib/constants";
 
-export default function EditMovieForm({ movie, open, onCancel, loading }) {
+export default function EditMovieForm({
+  movie,
+  open,
+  onSubmit,
+  onCancel,
+  loading,
+}) {
   const [title, setTitle] = useState(movie?.title);
   const [year, setYear] = useState(movie?.year);
   const [plot, setPlot] = useState(movie?.plot);
@@ -35,7 +41,21 @@ export default function EditMovieForm({ movie, open, onCancel, loading }) {
     label: genre,
     value: genre,
   }));
-  const handleSubmitForm = () => {};
+
+  const handleSubmitForm = (e) => {
+    e.preventDefault();
+    //Save the updated movie to database
+    onSubmit({
+      ...movie,
+      title,
+      year,
+      plot,
+      genres,
+      poster,
+      rated,
+      imdb: { rating: imdbRating },
+    });
+  };
   return (
     <Dialog open={open} onOpenChange={onCancel}>
       <DialogContent>
@@ -49,7 +69,7 @@ export default function EditMovieForm({ movie, open, onCancel, loading }) {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <Label htmlFor="title" className="font-medium">
-                  Movie Title <span className="text-red-600">*</span>
+                  Movie Title
                 </Label>
                 <Input
                   id="title"
@@ -57,14 +77,13 @@ export default function EditMovieForm({ movie, open, onCancel, loading }) {
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
                   placeholder="Enter the movie title"
-                  required
                   className="focus-visible:ring-primary"
                 />
               </div>
 
               <div className="space-y-2">
                 <Label htmlFor="year" className="font-medium">
-                  Movie Year <span className="text-red-600">*</span>
+                  Movie Year
                 </Label>
                 <Input
                   id="year"
@@ -72,7 +91,6 @@ export default function EditMovieForm({ movie, open, onCancel, loading }) {
                   value={year}
                   onChange={(e) => setYear(Number(e.target.value))}
                   type="number"
-                  required
                   placeholder="Enter the year"
                   className="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none]"
                 />
@@ -80,7 +98,7 @@ export default function EditMovieForm({ movie, open, onCancel, loading }) {
             </div>
             <div className="space-y-2">
               <Label htmlFor="plot" className="font-medium">
-                Plot Summary <span className="text-red-500">*</span>
+                Plot Summary
               </Label>
               <Textarea
                 id="plot"
@@ -88,7 +106,6 @@ export default function EditMovieForm({ movie, open, onCancel, loading }) {
                 value={plot}
                 onChange={(e) => setPlot(e.target.value)}
                 placeholder="A compelling summary of the movie's storyline..."
-                required
                 className="min-h-[100px] focus-visible:ring-primary"
               />
             </div>
@@ -96,11 +113,12 @@ export default function EditMovieForm({ movie, open, onCancel, loading }) {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <Label htmlFor="genres" className="font-medium">
-                  Genres <span className="text-red-500">*</span>
+                  Genres
                 </Label>
                 <MultiSelect
                   list={genresList}
                   placeholder="Select Movie Genres"
+                  selectedItems={genres}
                   onValueChange={setGenres}
                   className="focus-visible:ring-primary"
                 />
@@ -127,19 +145,31 @@ export default function EditMovieForm({ movie, open, onCancel, loading }) {
                 </Select>
               </div>
             </div>
+            <div>
+              <Label htmlFor="imdb">IMDb Rating</Label>
+              <Input
+                id="imdb"
+                name="imdb"
+                max="10.0"
+                step="0.1"
+                type="number"
+                placeholder="Enter imdb rating"
+                value={imdbRating} // Controlled input
+                onChange={(e) => setIMBbRating(Number(e.target.value))} // Controlled input
+              />
+            </div>
 
             <div className="space-y-2">
               <Label htmlFor="poster" className="font-medium">
-                Poster URL <span className="text-red-500">*</span>
+                Poster URL
               </Label>
               <Input
                 id="poster"
                 name="poster"
-                type="url"
+                type="name"
                 value={poster}
                 onChange={(e) => setPoster(e.target.value)}
                 placeholder="Enter the poster URL"
-                required
                 className="focus-visible:ring-primary"
               />
               <p className="text-xs text-muted-foreground mt-1">

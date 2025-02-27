@@ -1,9 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 103, "column": 0}, "map": {"version":3,"sources":["file:///Users/wijamunigekasunaravinda/Desktop/SEProject/ReactJS/my-first-react-app/lib/auth.js"],"sourcesContent":["import { betterAuth } from \"better-auth\";\nimport { mongodbAdapter } from \"better-auth/adapters/mongodb\";\nimport { MongoClient } from \"mongodb\"; // your mongodb client\n\nconst client = new MongoClient(process.env.MONGODB_URI);\nconst db = client.db(\"sample_mflix\"); // your db name\n\nexport const auth = betterAuth({\n  database: mongodbAdapter(db),\n  emailAndPassword: {\n    enabled: true,\n  },\n});\n"],"names":[],"mappings":";;;AAAA;AACA;AACA,qLAAuC,sBAAsB;AAF7D;;;;AAIA,MAAM,SAAS,IAAI,uGAAA,CAAA,cAAW,CAAC,QAAQ,GAAG,CAAC,WAAW;AACtD,MAAM,KAAK,OAAO,EAAE,CAAC,iBAAiB,eAAe;AAE9C,MAAM,OAAO,CAAA,GAAA,iKAAA,CAAA,aAAU,AAAD,EAAE;IAC7B,UAAU,CAAA,GAAA,+JAAA,CAAA,iBAAc,AAAD,EAAE;IACzB,kBAAkB;QAChB,SAAS;IACX;AACF"}},
-    {"offset": {"line": 121, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},
-    {"offset": {"line": 135, "column": 0}, "map": {"version":3,"sources":["file:///Users/wijamunigekasunaravinda/Desktop/SEProject/ReactJS/my-first-react-app/app/api/auth/%5B...all%5D/route.js"],"sourcesContent":["import { auth } from \"@/lib/auth\"; // path to your auth file\nimport { toNextJsHandler } from \"better-auth/next-js\";\n\nexport const { POST, GET } = toNextJsHandler(auth);\n"],"names":[],"mappings":";;;;AAAA,4LAAmC,yBAAyB;AAC5D;;;AAEO,MAAM,EAAE,IAAI,EAAE,GAAG,EAAE,GAAG,CAAA,GAAA,sJAAA,CAAA,kBAAe,AAAD,EAAE,6GAAA,CAAA,OAAI"}},
-    {"offset": {"line": 144, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
-}

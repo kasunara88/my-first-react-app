@@ -1,13 +1,9 @@
 import { NextResponse } from "next/server";
-import clientPromise from "@/lib/mongodb";
+import { db } from "@/lib/mongodb";
 
 export const GET = async (req) => {
   //Get movies from database
   try {
-    const client = await clientPromise();
-
-    const db = client.db("sample_mflix");
-
     //Fetch Movies From the database
     const movies = await db
       .collection("movies_n")

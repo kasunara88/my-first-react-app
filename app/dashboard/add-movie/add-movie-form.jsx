@@ -28,6 +28,7 @@ import { useToast } from "@/hooks/use-toast";
 export default function AddMovieForm() {
   const [genres, setGenres] = useState([]);
   const [rated, setRated] = useState("");
+  // const [imdbRating, setIMBbRating] = useState(0);
   const [loading, setLoading] = useState("");
   const { toast } = useToast();
   const genresList = GENRES.map((genre) => ({
@@ -40,17 +41,9 @@ export default function AddMovieForm() {
     const formData = new FormData(event.currentTarget);
     const title = formData.get("title")?.toString();
     const year = Number(formData.get("year"));
-    //const year = formData.get("year").toString();
     const plot = formData.get("plot")?.toString();
     const poster = formData.get("poster")?.toString();
-    // const genres = formData.getAll("genres");
-    // const rated = formData.get("rated").toString();
-    // console.log("Form Data", formData);
-    // console.log("Title", title);
-    // console.log("Year", year);
-    // console.log("Plot", plot);
-    // console.log("Genres", genres);
-    // console.log("Rated", rated);
+    const imdb = Number(formData.get("imdb"));
 
     if (title && year && plot && rated && poster) {
       // console.log({ title, year, plot, rated, genres });
@@ -62,12 +55,13 @@ export default function AddMovieForm() {
         rated,
         genres,
         poster,
+        imdb: { rating: imdb },
       });
       setLoading(false);
       if (resp.success) {
         toast({
           variant: "success",
-          title: "Movie added!",
+          title: "Movie added Successfully!",
           description: "Movie was added to FlexZone Dashboard",
         });
       }
@@ -133,6 +127,7 @@ export default function AddMovieForm() {
               <MultiSelect
                 list={genresList}
                 placeholder="Select Movie Genres"
+                selectedItems={genres}
                 onValueChange={setGenres}
                 className="focus-visible:ring-primary"
               />
@@ -158,6 +153,17 @@ export default function AddMovieForm() {
                 </SelectContent>
               </Select>
             </div>
+          </div>
+          <div>
+            <Label htmlFor="imdb">IMDb Rating</Label>
+            <Input
+              id="imdb"
+              name="imdb"
+              max="10.0"
+              step="0.1"
+              type="number"
+              placeholder="Enter imdb rating"
+            />
           </div>
 
           <div className="space-y-2">
