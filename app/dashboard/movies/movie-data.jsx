@@ -1,7 +1,10 @@
 import { db } from "@/lib/mongodb";
 import MovieTable from "./movie-table";
+
+export const revalidate = 60;
 // Movie data server component
 //Server Action call directly to mongodb
+
 export default async function MovieData() {
   try {
     const moviesQuery = await db

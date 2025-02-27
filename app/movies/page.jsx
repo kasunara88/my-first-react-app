@@ -1,7 +1,7 @@
 import { getMovies } from "@/lib/apis/server";
 import { Badge } from "@/components/ui/badge";
 import { FaStar } from "react-icons/fa";
-import { Eye, LayoutDashboard } from "lucide-react";
+import { LayoutDashboard } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
@@ -14,10 +14,11 @@ import {
 } from "@/components/ui/card";
 import Image from "next/image";
 
+export const dynamic = "force-dynamic";
+
 export default async function MoviesPublicPage() {
   // add shaadcn card
   const moviesQuery = await getMovies();
-  console.log("MOVIES", moviesQuery);
 
   return (
     <div className="container space-y-4 my-7">
