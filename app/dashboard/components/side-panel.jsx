@@ -9,13 +9,14 @@ import {
   Settings,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import SidePanelOverview from "../overview/side-panel-overview";
 
 export default function SidePanel() {
   const pathname = usePathname();
 
   const links = [
     {
-      href: "/dashboard",
+      href: "/dashboard/overview",
       label: "Overview",
       icon: <LayoutDashboard className="h-4 w-4" />,
     },

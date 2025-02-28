@@ -2,7 +2,7 @@
   "version": 3,
   "sources": [],
   "sections": [
-    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///Users/wijamunigekasunaravinda/Desktop/SEProject/ReactJS/my-first-react-app/app/dashboard/page.jsx"],"sourcesContent":["export default function DashboardPage() {\n  return <div>Dashboard Page</div>;\n}\n"],"names":[],"mappings":";;;;;AAAe,SAAS;IACtB,qBAAO,8OAAC;kBAAI;;;;;;AACd"}},
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///Users/wijamunigekasunaravinda/Desktop/SEProject/ReactJS/my-first-react-app/app/dashboard/page.jsx"],"sourcesContent":["export default function DashboardPage() {\n  return <div>dashboard</div>;\n}\n"],"names":[],"mappings":";;;;;AAAe,SAAS;IACtB,qBAAO,8OAAC;kBAAI;;;;;;AACd"}},
     {"offset": {"line": 21, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},
     {"offset": {"line": 32, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":""}},
     {"offset": {"line": 32, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},
