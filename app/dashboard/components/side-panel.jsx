@@ -42,10 +42,18 @@ export default function SidePanel() {
   ];
 
   return (
-    <nav className="w-64 px-4 py-6 border-r bg-background/95 backdrop-blur">
+    <nav
+      className={cn(
+        "w-64 h-screen px-4 py-6 border-r shadow-sm",
+        // Subtle gradient background with slight transparency
+        "bg-gradient-to-b from-accent/10 to-background/40 backdrop-blur-lg",
+        // Text and border colors
+        "border-border text-foreground"
+      )}
+    >
       <div className="space-y-1">
         <h2 className="px-2 text-lg font-semibold tracking-tight">Dashboard</h2>
-        <div className="h-[1px] bg-border mx-2 my-4" />
+        <div className="h-px bg-border mx-2 my-4" />
 
         <div className="flex flex-col gap-1">
           {links.map((link) => (
@@ -53,7 +61,7 @@ export default function SidePanel() {
               key={link.href}
               href={link.href}
               className={cn(
-                "flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors",
+                "group flex items-center gap-3 px-3 py-2.5 rounded-md text-sm font-medium transition-colors",
                 pathname === link.href
                   ? "bg-primary text-primary-foreground hover:bg-primary/90"
                   : "hover:bg-accent hover:text-accent-foreground",
@@ -61,14 +69,16 @@ export default function SidePanel() {
               )}
               aria-current={pathname === link.href ? "page" : undefined}
             >
-              {link.icon}
+              <span className="text-muted-foreground group-hover:text-inherit transition-colors">
+                {link.icon}
+              </span>
               {link.label}
             </Link>
           ))}
         </div>
       </div>
 
-      {/* Add a secondary navigation group */}
+      {/* Secondary navigation group */}
       <div className="mt-8 space-y-1">
         <h3 className="px-2 text-xs font-semibold text-muted-foreground tracking-wider uppercase">
           Quick Actions
@@ -76,9 +86,11 @@ export default function SidePanel() {
         <div className="flex flex-col gap-1 mt-2">
           <Link
             href="/dashboard/add-movie"
-            className="flex items-center gap-2 px-3 py-2 text-sm font-medium rounded-lg hover:bg-accent transition-colors"
+            className="group flex items-center gap-2 px-3 py-2 text-sm font-medium rounded-md transition-colors hover:bg-accent hover:text-accent-foreground"
           >
-            <PlusSquare className="h-4 w-4" />
+            <span className="text-muted-foreground group-hover:text-inherit transition-colors">
+              <PlusSquare className="h-4 w-4" />
+            </span>
             New Movie
           </Link>
         </div>
@@ -86,37 +98,3 @@ export default function SidePanel() {
     </nav>
   );
 }
-
-//   <div className="flex flex-col p-4 space-y-2">
-//     <Link
-//       href="/dashboard"
-//       className="hover:bg-blue-100 text--sm p-2 rounded"
-//     >
-//       Overview
-//     </Link>
-//     <Link
-//       href="/dashboard/movies"
-//       className="hover:bg-blue-100 text--sm p-2 rounded"
-//     >
-//       Movies
-//     </Link>
-//     <Link
-//       href="/dashboard/add-movie"
-//       className="hover:bg-blue-100 text--sm p-2 rounded"
-//     >
-//       Add Movies
-//     </Link>
-//     <Link
-//       href="/dashboard/users"
-//       className="hover:bg-blue-100 text--sm p-2 rounded"
-//     >
-//       Users
-//     </Link>
-//     <Link
-//       href="/dashboard/settings"
-//       className="hover:bg-blue-100 text--sm p-2 rounded"
-//     >
-//       Settings
-//     </Link>
-//   </div>
-// );
