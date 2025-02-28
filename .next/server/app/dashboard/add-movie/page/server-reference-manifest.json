@@ -1,0 +1,38 @@
+{
+  "node": {
+    "7f6fc8e7f5687188ee8dd68b5b14cdb59018f24461": {
+      "workers": {
+        "app/dashboard/add-movie/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/add-movie/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/actions/movie.js [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/add-movie/page": "action-browser"
+      }
+    },
+    "7f1fae6738077b8e3f61cf1c91e6a02a0fd009b344": {
+      "workers": {
+        "app/dashboard/add-movie/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/add-movie/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/actions/movie.js [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/add-movie/page": "action-browser"
+      }
+    },
+    "7fb2153afd585cff01240ff19f6dd5f69d5b27eb4f": {
+      "workers": {
+        "app/dashboard/add-movie/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/add-movie/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/actions/movie.js [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/add-movie/page": "action-browser"
+      }
+    }
+  },
+  "edge": {}
+}
