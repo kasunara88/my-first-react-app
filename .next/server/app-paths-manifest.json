@@ -1,10 +1,7 @@
 {
-  "/register/page": "app/register/page.js",
-  "/login/page": "app/login/page.js",
   "/api/auth/[...all]/route": "app/api/auth/[...all]/route.js",
   "/dashboard/page": "app/dashboard/page.js",
   "/dashboard/movies/page": "app/dashboard/movies/page.js",
-  "/dashboard/add-movie/page": "app/dashboard/add-movie/page.js",
   "/movies/page": "app/movies/page.js",
   "/api/v1/movies/route": "app/api/v1/movies/route.js"
 }
