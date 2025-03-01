@@ -57,6 +57,12 @@ __turbopack_esm__({
     "GET": (()=>GET)
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/server.js [app-route] (ecmascript)");
+(()=>{
+    const e = new Error("Cannot find module '@/libs/mongodb'");
+    e.code = 'MODULE_NOT_FOUND';
+    throw e;
+})();
+;
 ;
 const Movies = [
     {
@@ -173,6 +179,18 @@ const Movies = [
     }
 ];
 const GET = async (req)=>{
+    //Get movies from database
+    try {
+        const client = await clientPromise();
+        const db = client.db("sample_mflix");
+        //Fetch Movies From the database
+        const movies = await db.collection("movies").find({}).sort({
+            metacritic: -1
+        }).limit(10).toArray();
+        console.log("MOVIES", movies);
+    } catch (error) {
+        console.log("MONGODB ERROR", error);
+    }
     return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
         success: true,
         movies: Movies

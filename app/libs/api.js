@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import ky from "ky";
 
 // Create a new instance an API 
@@ -11,6 +12,9 @@ export const api = ky.create({
 });
 =======
 import ky from 'ky';
+=======
+import ky from "ky";
+>>>>>>> fe0a7b7 (Dashboard updated)
 
 // Create a new instance an API
 //api: This is the exported instance of ky configured with specific options. It can be reused across the application to make requests to the API.
