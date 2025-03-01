@@ -9,6 +9,11 @@
   }
 } */
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> origin/main
 @layer base {
   :root {
     --radius: 0.5rem;
@@ -21,6 +26,7 @@
     font-family: Arial, Helvetica, sans-serif;
   }
 }
+<<<<<<< HEAD
 
 [data-highlighted] {
   background-color: hsl(var(--accent));
@@ -31,3 +37,5 @@
   background-color: hsl(var(--primary));
   color: hsl(var(--primary-foreground));
 }
+=======
+>>>>>>> origin/main

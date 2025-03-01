@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
+<<<<<<< HEAD
     remotePatterns: [
       {
         protocol: "https",
@@ -9,6 +10,9 @@ const nextConfig = {
         search: "",
       },
     ],
+=======
+    domains: ["m.media-amazon.com"],
+>>>>>>> origin/main
   },
 };
 

@@ -7081,11 +7081,19 @@ class Router {
                     });
                     return new Promise(()=>{});
                 }
+<<<<<<< HEAD
                 const routerFilterSValue = ("TURBOPACK compile-time value", JSON.parse('{"numItems":12,"errorRate":0.0001,"numBits":231,"numHashes":14,"bitArray":[1,1,1,1,0,1,1,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0,1,1,1,1,0,0,1,1,0,0,1,0,1,1,1,0,1,1,1,0,0,0,0,0,0,1,1,0,0,1,1,1,0,1,1,1,1,1,1,1,0,1,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,0,1,0,1,0,0,0,1,1,0,0,0,1,1,0,0,0,0,0,1,0,0,1,0,1,0,1,1,1,1,1,1,0,1,0,0,1,1,1,1,0,1,1,1,1,0,1,0,1,0,0,0,1,1,1,0,1,0,1,0,1,0,1,1,0,0,1,0,0,0,0,1,1,1,1,1,1,0,1,0,0,1,1,1,0,1,0,1,0,1,0,0,1,1,0,0,1,1,0,1,1,1,0,1,1,1,0,0,1,0,0,0,1,0,1,1,1,0,0,1,1,1,0,1,0,1,1,0,0,1,1,1,1,1,1,0,0,0,1]}'));
                 if (!staticFilterData && routerFilterSValue) {
                     staticFilterData = routerFilterSValue ? routerFilterSValue : undefined;
                 }
                 const routerFilterDValue = ("TURBOPACK compile-time value", JSON.parse('{"numItems":1,"errorRate":0.0001,"numBits":20,"numHashes":14,"bitArray":[1,0,0,0,0,0,1,1,1,0,1,1,0,1,0,1,0,1,1,1]}'));
+=======
+                const routerFilterSValue = ("TURBOPACK compile-time value", JSON.parse('{"numItems":6,"errorRate":0.0001,"numBits":116,"numHashes":14,"bitArray":[1,1,0,0,1,0,1,0,0,1,1,1,1,0,0,1,0,1,0,1,0,1,0,1,1,0,0,0,1,1,0,0,0,0,1,1,0,1,1,1,1,1,1,0,0,0,0,1,1,0,0,0,1,0,1,1,1,0,0,1,1,0,1,1,1,0,1,0,0,1,0,1,1,1,0,1,1,1,1,1,0,0,1,0,0,0,0,1,0,1,0,0,1,0,0,0,0,0,1,0,0,0,1,0,1,1,1,1,0,0,1,1,0,0,1,1]}'));
+                if (!staticFilterData && routerFilterSValue) {
+                    staticFilterData = routerFilterSValue ? routerFilterSValue : undefined;
+                }
+                const routerFilterDValue = ("TURBOPACK compile-time value", JSON.parse('{"numItems":0,"errorRate":0.0001,"numBits":0,"numHashes":null,"bitArray":[]}'));
+>>>>>>> origin/main
                 if (!dynamicFilterData && routerFilterDValue) {
                     dynamicFilterData = routerFilterDValue ? routerFilterDValue : undefined;
                 }
@@ -18824,7 +18832,11 @@ function AppContainer(param) {
                             children: /*#__PURE__*/ (0, _jsxruntime.jsx)(_headmanagercontextsharedruntime.HeadManagerContext.Provider, {
                                 value: headManager,
                                 children: /*#__PURE__*/ (0, _jsxruntime.jsx)(_imageconfigcontextsharedruntime.ImageConfigContext.Provider, {
+<<<<<<< HEAD
                                     value: ("TURBOPACK compile-time value", JSON.parse('{"deviceSizes":[640,750,828,1080,1200,1920,2048,3840],"imageSizes":[16,32,48,64,96,128,256,384],"path":"/_next/image","loader":"default","dangerouslyAllowSVG":false,"unoptimized":false,"domains":[],"remotePatterns":[{"protocol":"https","hostname":"**.media-amazon.com","port":"","search":""}]}')),
+=======
+                                    value: ("TURBOPACK compile-time value", JSON.parse('{"deviceSizes":[640,750,828,1080,1200,1920,2048,3840],"imageSizes":[16,32,48,64,96,128,256,384],"path":"/_next/image","loader":"default","dangerouslyAllowSVG":false,"unoptimized":false,"domains":[],"remotePatterns":[]}')),
+>>>>>>> origin/main
                                     children: children
                                 })
                             })

@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "node": {
     "7f1fae6738077b8e3f61cf1c91e6a02a0fd009b344": {
       "workers": {
@@ -36,4 +37,9 @@
   },
   "edge": {},
   "encryptionKey": "y00oV580W67aT+pnE9Pm+DgCzSVPAYGo33uKPdY9ppg="
+=======
+  "node": {},
+  "edge": {},
+  "encryptionKey": "VdByBFcA6kVbfwuqKkObutiqNjGsP899hAoCq0plZpk="
+>>>>>>> origin/main
 }
